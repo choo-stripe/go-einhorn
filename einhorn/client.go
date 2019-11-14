@@ -33,8 +33,8 @@ type ClientAckRequest struct {
 }
 
 type ClientResponse struct {
-	RequestId int `yaml:"request_id"`
-	Message   string
+	RequestId int    `yaml:"request_id"`
+	Message   string `yaml:"message"`
 	Wait      bool
 }
 
