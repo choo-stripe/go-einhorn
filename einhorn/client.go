@@ -78,12 +78,11 @@ func (c *Client) ReadResponse() (*ClientResponse, error) {
 	if err != nil {
 		return nil, err
 	}
+	fmt.Println("encoded: " + encoded)
 	line, err := url.QueryUnescape(encoded)
 	if err != nil {
 		return nil, err
 	}
-
-	fmt.Println("LINE: " + line)
 
 	var response ClientResponse
 	if err := yaml.Unmarshal([]byte(line), &response); err != nil {
